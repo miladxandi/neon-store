@@ -101,23 +101,27 @@
 
 ### مراحل نصب
 
-```bash
 # ۱. کلون کردن پروژه از گیت‌هاب
+
 # این دستور یک کپی از پروژه را روی سیستم شما دانلود می‌کند
-git clone https://github.com/username/repo.git
+
+`git clone https://github.com/username/repo.git`
 
 # ۲. ورود به پوشه پروژه
-cd repo
+
+`cd repo`
 
 # ۳. نصب وابستگی‌ها
+
 # npm install فایل package.json را می‌خواند و پکیج‌های لازم (مثل axios) را نصب می‌کند
-npm install
+
+`npm install`
 
 ### اجرای پروژه
 
 > [!TIP]
 > **روش ۱: استفاده از Live Server در VS Code (پیشنهادی)**
-> 
+>
 > 1. اکستنشن "Live Server" را در VS Code نصب کنید
 > 2. روی فایل `index.html` راست‌کلیک کنید
 > 3. گزینه "Open with Live Server" را بزنید
@@ -125,22 +129,21 @@ npm install
 
 > [!NOTE]
 > **روش ۲: باز کردن مستقیم در مرورگر**
-> 
+>
 > فایل `index.html` را با مرورگر باز کنید (ممکن است برخی قابلیت‌ها کار نکنند)
 
 ---
 
 ## 📁 ساختار پروژه
 
-
 📦 پروژه
-├── 📄 index.html        ← صفحه اصلی - لیست محصولات
-├── 📄 single.html       ← صفحه جزئیات هر محصول
-├── 📜 index.js          ← کد جاوااسکریپت صفحه اصلی
-├── 📜 product.js        ← کد جاوااسکریپت صفحه محصول
-├── 🎨 style.css         ← استایل صفحه اصلی
-├── 🎨 product.css       ← استایل صفحه محصول
-├── 📋 package.json      ← تنظیمات npm و لیست وابستگی‌ها
+├── 📄 index.html ← صفحه اصلی - لیست محصولات
+├── 📄 single.html ← صفحه جزئیات هر محصول
+├── 📜 index.js ← کد جاوااسکریپت صفحه اصلی
+├── 📜 product.js ← کد جاوااسکریپت صفحه محصول
+├── 🎨 style.css ← استایل صفحه اصلی
+├── 🎨 product.css ← استایل صفحه محصول
+├── 📋 package.json ← تنظیمات npm و لیست وابستگی‌ها
 └── 📋 package-lock.json ← قفل نسخه دقیق وابستگی‌ها
 
 ---
@@ -161,26 +164,28 @@ javascript
 برای ذخیره داده‌های مرتبط استفاده می‌شوند
 */
 
+```javascript
 let jObject = {
-"name" : "Milad",              // کلید: name، مقدار: "Milad" (رشته)
-"lastname" : "Xandi",          // کلید: lastname، مقدار: "Xandi"
-"national_number" : "001859674",
-"nationality" : "IR",
-"sub_persons":[                // این کلید یک آرایه از آبجکت‌ها را نگه می‌دارد
-{
-"name" : "Mamad",
-"lastname" : "Xandi",
-"national_number" : "001859687",
-"nationality" : "IR",
-},
-{
-"name" : "Reza",
-"lastname" : "Xandi",
-"national_number" : "001859688",
-"nationality" : "IR",
-},
-]
+    "name": "Milad",              // کلید: name، مقدار: "Milad" (رشته)
+    "lastname": "Xandi",          // کلید: lastname، مقدار: "Xandi"
+    "national_number": "001859674",
+    "nationality": "IR",
+    "sub_persons": [                // این کلید یک آرایه از آبجکت‌ها را نگه می‌دارد
+        {
+            "name": "Mamad",
+            "lastname": "Xandi",
+            "national_number": "001859687",
+            "nationality": "IR",
+        },
+        {
+            "name": "Reza",
+            "lastname": "Xandi",
+            "national_number": "001859688",
+            "nationality": "IR",
+        },
+    ]
 }
+```
 
 /*
 💡 آموزش: آرایه (Array)
@@ -190,12 +195,16 @@ let jObject = {
 ⚠️ مهم: ایندکس از 0 شروع می‌شود!
 */
 
+```javascript
 let arr = [5, 7, 9, 11, 13, 15, 17, 19]
-//        ↑  ↑  ↑   ↑   ↑   ↑   ↑   ↑
+//         ↑  ↑  ↑   ↑   ↑   ↑   ↑   ↑
 //        0  1  2   3   4   5   6   7  ← ایندکس‌ها
+```
 
+```javascript
 console.log(arr[0])  // خروجی: 5 (اولین عنصر)
 console.log(arr[3])  // خروجی: 11 (چهارمین عنصر)
+```
 
 ---
 
@@ -205,6 +214,7 @@ javascript
 /*
 💡 آموزش: async/await
 ──────────────────────
+
 - async: مشخص می‌کند که این تابع غیرهمزمان (asynchronous) است
 - await: منتظر می‌ماند تا عملیات کامل شود
 
@@ -213,18 +223,19 @@ javascript
 قبل از اینکه داده‌ها برسند!
 */
 
+```javascript
 async function fetchProducts() {
 // axios.get یک درخواست HTTP GET ارسال می‌کند
 // await منتظر می‌ماند تا پاسخ برسد
-let response = await axios.get("https://api.escuelajs.co/api/v1/products");
-
+    let response = await axios.get("https://api.escuelajs.co/api/v1/products");
 // response شامل اطلاعات زیادی است:
 // - response.status: کد وضعیت (مثلاً 200)
 // - response.headers: هدرهای HTTP
 // - response.data: داده‌های اصلی JSON ← این را می‌خواهیم!
 
-return response.data;
+    return response.data;
 }
+```
 
 ---
 
@@ -240,8 +251,9 @@ DOM (Document Object Model) ساختار درختی HTML است
 - "#id"    → انتخاب با id
 - ".class" → انتخاب با class
 - "tag"    → انتخاب با نام تگ
-*/
+  */
 
+```javascript
 // قالب‌های HTML که کپی می‌شوند
 const productCard = document.querySelector("#card")           // قالب کارت محصول
 const basketItem = document.querySelector("#item")            // قالب آیتم سبد خرید
@@ -251,6 +263,7 @@ const productImage = document.querySelector("#product-image") // قالب تصو
 const holder = document.querySelector("#cards-holder")        // محل نمایش کارت‌ها
 const basketCard = document.querySelector("#cart")            // محل نمایش سبد خرید
 const totalQuantity = document.querySelector("#total-quantity") // نمایش تعداد
+```
 
 ---
 
@@ -262,7 +275,12 @@ javascript
 ──────────────────────────
 در ES2022 می‌توانیم await را در سطح بالای ماژول استفاده کنیم
 ⚠️ نیاز به type="module" در تگ script دارد:
+
+```html
+
 <script type="module" src="index.js"></script>
+```
+
 */
 
 let products = await fetchProducts();
@@ -277,48 +295,51 @@ javascript
 💡 آموزش: LocalStorage
 ───────────────────────
 LocalStorage داده‌ها را در مرورگر ذخیره می‌کند
+
 - حتی بعد از بستن مرورگر باقی می‌ماند
 - فقط رشته (string) ذخیره می‌کند
 - برای آبجکت‌ها باید از JSON استفاده کنیم
-*/
+  */
 
-function refreshBasket(){
+```javascript
+function refreshBasket() {
 // ۱. خواندن داده از LocalStorage
 // JSON.parse: تبدیل رشته JSON به آبجکت جاوااسکریپت
-let addedItems = JSON.parse(localStorage.getItem("products"));
+    let addedItems = JSON.parse(localStorage.getItem("products"));
 
 // ۲. پاک کردن محتوای قبلی سبد
-basketCard.innerHTML = "";
+    basketCard.innerHTML = "";
 
 // ۳. بروزرسانی تعداد کل آیتم‌ها
-totalQuantity.innerHTML = addedItems.length;
+    totalQuantity.innerHTML = addedItems.length;
 
 // ۴. نمایش هر آیتم در سبد خرید
-/*
-💡 آموزش: forEach
-──────────────────
-forEach روی هر عنصر آرایه یک تابع اجرا می‌کند
-پارامترها:
-- product: عنصر فعلی
-- productIndex: ایندکس عنصر (اختیاری)
-*/
-addedItems.forEach((product, productIndex) => {
+    /*
+    💡 آموزش: forEach
+    ──────────────────
+    forEach روی هر عنصر آرایه یک تابع اجرا می‌کند
+    پارامترها:
+    - product: عنصر فعلی
+    - productIndex: ایندکس عنصر (اختیاری)
+    */
+    addedItems.forEach((product, productIndex) => {
 // cloneNode(true): کپی کامل المان (با فرزندان)
-var item = basketItem.cloneNode(true);
+        var item = basketItem.cloneNode(true);
 
 // حذف کلاس d-none برای نمایش المان
 // d-none یک کلاس Bootstrap است که display: none می‌دهد
-item.classList.remove('d-none');
+        item.classList.remove('d-none');
 
 // پر کردن اطلاعات
-item.querySelector('.header').innerHTML = product.title;
-item.querySelector('.description').innerHTML = product.quantity;
-item.querySelector('.extra').innerHTML = "$" + product.price;
+        item.querySelector('.header').innerHTML = product.title;
+        item.querySelector('.description').innerHTML = product.quantity;
+        item.querySelector('.extra').innerHTML = "$" + product.price;
 
 // appendChild: اضافه کردن المان به انتهای والد
-basketCard.appendChild(item);
-})
+        basketCard.appendChild(item);
+    })
 }
+```
 
 ---
 
@@ -331,37 +352,40 @@ javascript
 برای هر محصول در آرایه، یک کارت HTML می‌سازیم
 */
 
+```javascript
 products.forEach((product, productIndex) => {
 // اضافه کردن فیلد quantity به هر محصول
-products[productIndex]['quantity'] = 1;
+    products[productIndex]['quantity'] = 1;
 
 // ساخت کپی از قالب کارت
-var currentProductHtml = productCard.cloneNode(true);
-currentProductHtml.classList.remove('d-none');
-currentProductHtml.id = product.id;
+    var currentProductHtml = productCard.cloneNode(true);
+    currentProductHtml.classList.remove('d-none');
+    currentProductHtml.id = product.id;
 
-/*
-💡 آموزش: شرط‌های ترکیبی
-─────────────────────────
-&& (AND): هر دو شرط باید true باشند
-|| (OR): حداقل یکی باید true باشد
-
-product.images && product.images[0]
-یعنی: آیا images وجود دارد و آیا حداقل یک تصویر دارد؟
-*/
-if (product.images && product.images[0]) {
-var currentImage = productImage.cloneNode(true);
-currentImage.classList.remove('d-none');
+    /*
+    💡 آموزش: شرط‌های ترکیبی
+    ─────────────────────────
+    && (AND): هر دو شرط باید true باشند
+    || (OR): حداقل یکی باید true باشد
+    
+    product.images && product.images[0]
+    یعنی: آیا images وجود دارد و آیا حداقل یک تصویر دارد؟
+    */
+    if (product.images && product.images[0]) {
+        var currentImage = productImage.cloneNode(true);
+        currentImage.classList.remove('d-none');
 
 // تنظیم تصویر پس‌زمینه با CSS
-currentImage.style.backgroundImage = "url(" + product.images[0] + ")";
-currentImage.id = product.id;
-currentImage.classList.remove('hidden');
-currentImage.classList.add('visible');
+        currentImage.style.backgroundImage = "url(" + product.images[0] + ")";
+        currentImage.id = product.id;
+        currentImage.classList.remove('hidden');
+        currentImage.classList.add('visible');
 
 // اضافه کردن تصویر به کارت
-currentProductHtml.querySelector("div").appendChild(currentImage);
-}
+        currentProductHtml.querySelector("div").appendChild(currentImage);
+    }
+});
+```
 
 ---
 
@@ -376,17 +400,19 @@ javascript
 کد بالا ساده‌تر است و همان کار را انجام می‌دهد
 */
 
+```javascript
 // product.images.forEach((image, index) => {
-//     if (index === 0) {
-//         var currentImage = productImage.cloneNode(true);
-//         currentImage.classList.remove('d-none');
-//         currentImage.style.backgroundImage = "url(" + image + ")";
-//         currentImage.id = product.id + '-' + index;
-//         currentImage.classList.remove('hidden');
-//         currentImage.classList.add('visible');
-//         currentProductHtml.querySelector("div").appendChild(currentImage);
-//     }
+// if (index === 0) {
+// var currentImage = productImage.cloneNode(true);
+// currentImage.classList.remove('d-none');
+// currentImage.style.backgroundImage = "url(" + image + ")";
+// currentImage.id = product.id + '-' + index;
+// currentImage.classList.remove('hidden');
+// currentImage.classList.add('visible');
+// currentProductHtml.querySelector("div").appendChild(currentImage);
+// }
 // })
+```
 
 ---
 
@@ -401,30 +427,39 @@ addEventListener به یک المان می‌گوید که به یک رویدا�
 element.addEventListener('نوع رویداد', تابع callback)
 
 رویدادهای رایج:
+
 - 'click': کلیک ماوس
 - 'submit': ارسال فرم
 - 'keydown': فشردن کلید
 - 'mouseover': ورود ماوس
-*/
+  */
 
+```javascript
 currentProductHtml.querySelector('button').addEventListener('click', (e) => {
 // e یا event: آبجکتی شامل اطلاعات رویداد
-console.log('clicked on element ' + productIndex + " which is for " + product.title);
+    console.log('clicked on element ' + productIndex + " which is for " + product.title);
 
 // خواندن سبد خرید فعلی از LocalStorage
-let addedProducts = JSON.parse(localStorage.getItem("products"));
-
+    let addedProducts = JSON.parse(localStorage.getItem("products"));
+});
+```
 /*
 💡 آموزش: بررسی null و undefined
 ──────────────────────────────────
+
 - null: مقدار عمداً خالی است
 - undefined: مقدار تعریف نشده است
 - length === 0: آرایه خالی است
-*/
-if (addedProducts === null || addedProducts === undefined || addedProducts.length === 0) {
-// سبد خالی است، آرایه جدید با این محصول بساز
-addedProducts = [products[productIndex]];
-} else {
+  */
+
+```javascript
+  if (addedProducts === null || addedProducts === undefined || addedProducts.length === 0) {
+  // سبد خالی است، آرایه جدید با این محصول بساز
+  addedProducts = [products[productIndex]];
+  } else {
+    
+  }
+```
 
 ---
 
@@ -438,21 +473,25 @@ javascript
 در جاوااسکریپت چنین متدی وجود ندارد
 
 برای حذف از آرایه باید از روش‌های زیر استفاده کنید:
+
 - splice(index, 1): حذف از ایندکس مشخص
 - filter(): ساخت آرایه جدید بدون عنصر خاص
-*/
+  */
 
+
+```javascript
 // let items = addedProducts.find(p => p.id === products[productIndex].id);
 // console.log(items);
 // if (items !== null && items !== undefined) {
-//     console.log(1)
-//     products[productIndex].quantity += items.quantity;
-//     addedProducts.Array.remove(items);  // ❌ اشتباه!
-//     addedProducts.push(products[productIndex]);
+// console.log(1)
+// products[productIndex].quantity += items.quantity;
+// addedProducts.Array.remove(items); // ❌ اشتباه!
+// addedProducts.push(products[productIndex]);
 // }
 // else {
-//     addedProducts.push(products[productIndex]);
+// addedProducts.push(products[productIndex]);
 // }
+```
 
 ---
 
@@ -464,12 +503,12 @@ javascript
 ────────────────────
 findIndex ایندکس اولین عنصری که شرط را برآورده کند برمی‌گرداند
 اگر پیدا نشود، -1 برمی‌گرداند
-
 p => p.id === ...
 این یک Arrow Function است، معادل:
 function(p) { return p.id === ...; }
 */
 
+```javascript
 let foundIndex = addedProducts.findIndex(p => p.id === products[productIndex].id);
 
 if (foundIndex !== -1) {
@@ -480,7 +519,7 @@ else {
 // محصول جدید است → به سبد اضافه کن
 addedProducts.push(products[productIndex]);
 }
-}
+```
 
 /*
 💡 آموزش: ذخیره در LocalStorage
@@ -488,11 +527,13 @@ addedProducts.push(products[productIndex]);
 JSON.stringify: تبدیل آبجکت به رشته JSON
 LocalStorage فقط رشته می‌پذیرد
 */
-localStorage.setItem("products", JSON.stringify(addedProducts));
 
+
+```javascript
+localStorage.setItem("products", JSON.stringify(addedProducts));
 // بروزرسانی نمایش سبد خرید
 refreshBasket();
-})
+```
 
 ---
 
@@ -502,6 +543,7 @@ javascript
 /*
 💡 آموزش: innerHTML vs textContent
 ────────────────────────────────────
+
 - innerHTML: می‌تواند HTML را parse کند (خطر XSS!)
 - textContent: فقط متن ساده (امن‌تر)
 
@@ -511,6 +553,7 @@ substring(start, end) بخشی از رشته را برمی‌گرداند
 substring(0, 50) → از کاراکتر 0 تا 50
 */
 
+```javascript
 currentProductHtml.querySelector('.product-title').innerHTML = product.title;
 
 // لینک به صفحه جزئیات با Query String
@@ -518,17 +561,17 @@ currentProductHtml.querySelector('.product-title').innerHTML = product.title;
 currentProductHtml.querySelector('.product-title').href = "/single.html?slug=" + product.slug;
 
 // نمایش 50 کاراکتر اول توضیحات + ...
-currentProductHtml.querySelector('.product-description').innerHTML = 
+currentProductHtml.querySelector('.product-description').innerHTML =
 product.description.substring(0, 50) + "...";
 
 currentProductHtml.querySelector('.product-price').innerHTML = product.price + "$";
 
 // اضافه کردن کارت کامل‌شده به صفحه
 holder.appendChild(currentProductHtml);
-})
 
 // در پایان، سبد خرید را نمایش بده
 refreshBasket();
+```
 
 ---
 
@@ -552,10 +595,12 @@ javascript
 المان‌های HTML هنوز وجود نداشته باشند!
 */
 
+```javascript
 document.addEventListener('DOMContentLoaded', async () => {
 // تمام کد داخل این callback است
 // async اجازه استفاده از await را می‌دهد
 });
+```
 
 ---
 
@@ -572,6 +617,7 @@ javascript
 window.location.search → "?slug=product-name&color=red"
 */
 
+```javascript
 // ساخت آبجکت URLSearchParams
 var params = new URLSearchParams(window.location.search);
 
@@ -585,6 +631,8 @@ var slug = params.entries().find(entry => entry[0] === "slug");
 // پیدا کردن محصول با این slug
 const currentProduct = products.find(p => p.slug === slug[1]);
 
+```
+
 ---
 
 ### ۳. گالری تصاویر
@@ -593,9 +641,12 @@ javascript
 /*
 💡 آموزش: گالری با Thumbnail
 ─────────────────────────────
+
 - تصاویر کوچک (thumbnail) در کنار نمایش داده می‌شوند
 - با کلیک روی هر کدام، تصویر اصلی عوض می‌شود
-*/
+  */
+- 
+```javascript
 
 const mainImage = document.getElementById('main-product-image');
 const thumbs = document.querySelectorAll('.gallery-thumb');
@@ -607,13 +658,17 @@ title.innerHTML = currentProduct.title;
 
 thumbs.forEach((thumb, index) => {
 // بررسی وجود تصویر برای این ایندکس
-if (currentProduct.images !== null && currentProduct.images[index]) {
+    if (currentProduct.images !== null && currentProduct.images[index]) {
 // تنظیم src تصویر کوچک
-thumb.querySelector("img").setAttribute("src", currentProduct.images[index]);
+        thumb.querySelector("img").setAttribute("src", currentProduct.images[index]);
 
 // تصویر اول را به عنوان تصویر اصلی نمایش بده
-if (index === 0) {
-const newSrc = currentProduct.images[index];
+        if (index === 0) {
+            const newSrc = currentProduct.images[index];
+        }
+    }
+});
+```
 
 /*
 💡 آموزش: انیمیشن Fade
@@ -707,7 +762,7 @@ document.body.style.overflow = 'hidden';
 // تابع بستن مودال
 const closeZoom = () => {
 zoomModal.classList.remove('active');
-document.body.style.overflow = '';  // برگرداندن اسکرول
+document.body.style.overflow = ''; // برگرداندن اسکرول
 };
 
 // بستن با کلیک روی دکمه X
@@ -799,7 +854,7 @@ let val = parseInt(qtyInput.value) || 1;
 
 if (val > 1) {
 qtyInput.value = val - 1;
-animateQty();  // انیمیشن بصری
+animateQty(); // انیمیشن بصری
 }
 });
 
@@ -852,9 +907,10 @@ javascript
 تب‌ها برای نمایش محتوای مختلف در یک فضای محدود استفاده می‌شوند
 
 ساختار:
+
 - Tab Buttons: دکمه‌های بالا برای انتخاب
 - Tab Panels: محتوای هر تب (فقط یکی نمایش داده می‌شود)
-*/
+  */
 
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
@@ -937,10 +993,11 @@ Toast یک پیام کوتاه است که موقتاً نمایش داده می
 معمولاً در گوشه صفحه ظاهر می‌شود و خودکار محو می‌شود
 
 پارامترها:
+
 - message: متن پیام
 - type: نوع (success, info, error, warning) برای استایل
 - icon: کلاس آیکون Font Awesome
-*/
+  */
 
 function showToast(message, type = 'info', icon = 'fas fa-info-circle') {
 const container = document.getElementById('toast-container');
@@ -959,12 +1016,12 @@ container.appendChild(toast);
 
 // حذف خودکار بعد از 3 ثانیه
 setTimeout(() => {
-toast.classList.add('toast-out');  // شروع انیمیشن خروج
+toast.classList.add('toast-out'); // شروع انیمیشن خروج
 
 setTimeout(() => {
-toast.remove();  // حذف کامل از DOM
-}, 400);  // بعد از پایان انیمیشن
-}, 3000);  // 3 ثانیه نمایش
+toast.remove(); // حذف کامل از DOM
+}, 400); // بعد از پایان انیمیشن
+}, 3000); // 3 ثانیه نمایش
 }
 
 /*
@@ -985,14 +1042,15 @@ javascript
 برای تشخیص اینکه آیا یک المان در viewport (قسمت قابل مشاهده صفحه) است
 
 کاربردها:
+
 - Lazy loading تصاویر
 - انیمیشن‌های scroll-triggered
 - Infinite scroll
-*/
+  */
 
 const observerOptions = {
-threshold: 0.1,  // 10% المان باید قابل مشاهده باشد تا trigger شود
-rootMargin: '0px 0px -50px 0px'  // حاشیه اضافی (بالا راست پایین چپ)
+threshold: 0.1, // 10% المان باید قابل مشاهده باشد تا trigger شود
+rootMargin: '0px 0px -50px 0px' // حاشیه اضافی (بالا راست پایین چپ)
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -1041,7 +1099,7 @@ javascript
 console.log("مقدار متغیر:", myVariable);
 console.error("پیام خطا");
 console.warn("پیام اخطار");
-console.table(myArray);  // نمایش آرایه به صورت جدول
+console.table(myArray); // نمایش آرایه به صورت جدول
 
 ### ۲. Error Handling
 
@@ -1086,10 +1144,8 @@ const titleText = productTitle.innerHTML;
 
 <div align="center">
 
-ساخته شده با ❤️ برای جامعه توسعه‌دهندگان فارسی‌زبان
+ساخته شده با ❤️
 
 ⭐ اگر این پروژه برایتان مفید بود، یک ستاره بدهید!
-
-</div>
 
 </div>
