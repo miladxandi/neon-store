@@ -97,7 +97,7 @@
 ### مراحل نصب
 
 ```bash
-git clone https://github.com/username/repo.git
+git clone https://github.com/miladxandi/neon-store.git
 # ۱. کلون کردن پروژه
 
 cd repo
