@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# JetBrains IDE
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
