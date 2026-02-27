@@ -22,18 +22,47 @@
 // let arr = [5,7,9,11,13,15,17,19]
 //
 // console.log(arr[0])
+
+$('.ui.dropdown.cart-wrapper')
+    .dropdown()
+;
+
 async function fetchProducts() {
     let response = await axios.get("https://api.escuelajs.co/api/v1/products");
     return response.data;
 }
 
 const productCard = document.querySelector("#card")
+const basketItem = document.querySelector("#item")
 const productImage = document.querySelector("#product-image")
 
 const holder = document.querySelector("#cards-holder")
+const basketCard = document.querySelector("#cart")
+const totalQuantity = document.querySelectorAll(".total-quantity")
+const emptyBasketBox = document.querySelector(".cart-empty-state")
+
 
 let products = await fetchProducts();
 
+
+function refreshBasket(){
+    let addedItems = JSON.parse(localStorage.getItem("products"));
+    basketCard.innerHTML = "";
+    totalQuantity.forEach((element) => {
+        element.innerHTML = addedItems.length;
+    })
+    if (addedItems.length>=1){
+        emptyBasketBox.classList.add("d-none")
+    }
+    addedItems.forEach((product, productIndex) => {
+        var item = basketItem.cloneNode(true);
+        item.classList.remove('d-none');
+        item.querySelector('.header').innerHTML = product.title;
+        item.querySelector('.description').innerHTML = product.quantity;
+        item.querySelector('.extra').innerHTML = "$"+product.price;
+        basketCard.appendChild(item);
+    })
+}
 
 products.forEach((product, productIndex) => {
     products[productIndex]['quantity'] = 1;
