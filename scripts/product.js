@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ═══════════════ GALLERY FUNCTIONALITY ═══════════════
     const mainImage = document.getElementById('main-product-image');
     const thumbs = document.querySelectorAll('.gallery-thumb');
+
     document.querySelectorAll('.product-title').forEach(title => {
         title.innerHTML = currentProduct.title;
     })

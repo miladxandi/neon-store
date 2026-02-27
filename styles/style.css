@@ -251,25 +251,25 @@ body#main::before {
 .cart-dropdown {
     display: none;
     position: absolute;
-    top: calc(100% + 12px);
-    right: 0;
+    top: calc(100% + 15px);
+    left: 0;
     width: 360px;
     z-index: 1000;
-    background: var(--bg-secondary);
+    background: var(--bg-secondary) !important;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    opacity: 0;
+    opacity: 1;
     transform: translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease;
     overflow: hidden;
 }
 
-.cart-wrapper:hover .cart-dropdown {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
+/*..cart-wrapper:hover .cart-dropdown {*/
+/*    display: block;*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
 
 .cart-dropdown-header {
     display: flex;

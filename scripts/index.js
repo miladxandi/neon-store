@@ -22,38 +22,18 @@
 // let arr = [5,7,9,11,13,15,17,19]
 //
 // console.log(arr[0])
-
-
 async function fetchProducts() {
     let response = await axios.get("https://api.escuelajs.co/api/v1/products");
     return response.data;
 }
 
 const productCard = document.querySelector("#card")
-const basketItem = document.querySelector("#item")
 const productImage = document.querySelector("#product-image")
 
 const holder = document.querySelector("#cards-holder")
-const basketCard = document.querySelector("#cart")
-const totalQuantity = document.querySelector("#total-quantity")
-
 
 let products = await fetchProducts();
 
-
-function refreshBasket(){
-    let addedItems = JSON.parse(localStorage.getItem("products"));
-    basketCard.innerHTML = "";
-    totalQuantity.innerHTML = addedItems.length;
-    addedItems.forEach((product, productIndex) => {
-        var item = basketItem.cloneNode(true);
-        item.classList.remove('d-none');
-        item.querySelector('.header').innerHTML = product.title;
-        item.querySelector('.description').innerHTML = product.quantity;
-        item.querySelector('.extra').innerHTML = "$"+product.price;
-        basketCard.appendChild(item);
-    })
-}
 
 products.forEach((product, productIndex) => {
     products[productIndex]['quantity'] = 1;
@@ -133,6 +113,3 @@ products.forEach((product, productIndex) => {
     currentProductHtml.querySelector('.product-price').innerHTML = product.price +"$";
     holder.appendChild(currentProductHtml);
 })
-
-
-refreshBasket();

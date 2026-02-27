@@ -55,6 +55,21 @@ git pull origin main
 git push origin main
 ```
 
+# اگر خطای Unrelated histories داشتید این دستور رو اجرا کن:
+
+```shell
+git pull origin main --allow-unrelated-histories
+```
+
+# دستوراتی که به طور مداوم طی توسعه و یا دیباگ یک پروژه کاربرد دارند اینا هستن:
+
+```shell
+git add .
+
+git commit -m "custom message"
+
+git push origin main
+```
 ---
 
 <div align="center">

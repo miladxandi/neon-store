@@ -1,0 +1,17 @@
+.ui.left{
+    border-radius: 0 20px 20px 0 !important;
+}
+.ui.right{
+    border-radius: 20px 0 0 20px !important;
+}
+.ui.action > input{
+    border-radius: 0!important;
+    text-align: center;
+    width: 100px;
+}
+.ui.action > button{
+    width: 20px;
+}
+.item-image{
+    background-color: white;
+}

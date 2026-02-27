@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/product.css" >
 </head>
 <body id="main">
-
+<div class="item d-none" id="item">
+    <div class="content">
+        <div class="header">Product One</div>
+        <div class="description">Qty: 1</div>
+        <div class="extra">€20</div>
+    </div>
+</div>
 <!-- ═══════════════ NAVBAR ═══════════════ -->
 <nav class="top-navbar">
     <div class="navbar-inner">
@@ -27,7 +33,7 @@
         </div>
 
         <div class="navbar-links">
-            <a class="nav-link" href="/">
+            <a class="nav-link active" href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -35,19 +41,19 @@
                 </svg>
                 Home
             </a>
-<!--            <a class="nav-link active" href="#">-->
-<!--                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"-->
-<!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
-<!--                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>-->
-<!--                    <line x1="8" y1="21" x2="16" y2="21"/>-->
-<!--                    <line x1="12" y1="17" x2="12" y2="21"/>-->
-<!--                </svg>-->
-<!--                Products-->
-<!--            </a>-->
+            <!--            <a class="nav-link" href="#">-->
+            <!--                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"-->
+            <!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+            <!--                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>-->
+            <!--                    <line x1="8" y1="21" x2="16" y2="21"/>-->
+            <!--                    <line x1="12" y1="17" x2="12" y2="21"/>-->
+            <!--                </svg>-->
+            <!--                Products-->
+            <!--            </a>-->
         </div>
 
         <div class="navbar-actions">
-            <div class="cart-wrapper">
+            <div class="ui dropdown cart-wrapper">
                 <button class="cart-btn" id="cart-toggle">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,14 +62,14 @@
                         <path d="M17 10l-2 -6"/>
                         <path d="M7 10l2 -6"/>
                     </svg>
-                    <span class="cart-badge" id="total-quantity">0</span>
+                    <span class="cart-badge total-quantity">0</span>
                 </button>
 
                 <!-- Dropdown Cart -->
-                <div class="cart-dropdown" id="cart-dropdown">
+                <div class="cart-dropdown menu" id="cart-dropdown">
                     <div class="cart-dropdown-header">
                         <h3>Shopping Cart</h3>
-                        <span class="cart-count"><span id="total-quantity-mirror">0</span> items</span>
+                        <span class="cart-count"><span class="total-quantity">0</span> items</span>
                     </div>
                     <div class="cart-dropdown-body">
                         <div class="ui divided items" id="cart">
@@ -81,15 +87,17 @@
                         </div>
                     </div>
                     <div class="cart-dropdown-footer">
-                        <button class="checkout-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                 stroke-linejoin="round">
-                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
-                                <line x1="1" y1="10" x2="23" y2="10"/>
-                            </svg>
-                            Checkout
-                        </button>
+                        <a href="checkout.html">
+                            <button class="checkout-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                                Checkout
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1065,6 +1073,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
-<script type="module" src="/product.js"></script>
+<script type="module" src="scripts/product.js"></script>
+<script type="module" src="scripts/useBasket.js"></script>
 </body>
 </html>

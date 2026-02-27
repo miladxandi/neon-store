@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/checkout.css">
 </head>
 <body id="main">
 
@@ -49,6 +50,25 @@
     </div>
 </div>
 
+<div class="item d-none" id="basket-item">
+    <div class="image">
+        <img class="item-image" src="">
+    </div>
+    <div class="content">
+        <a class="header"></a>
+        <div class="meta">
+            <span>Description</span>
+        </div>
+        <div class="description">
+            <p></p>
+        </div>
+        <div class="extra">
+
+
+        </div>
+    </div>
+</div>
+
 <!-- ========== NAVBAR ========== -->
 <nav class="top-navbar">
     <div class="navbar-inner">
@@ -71,15 +91,15 @@
                 </svg>
                 Home
             </a>
-<!--            <a class="nav-link" href="#">-->
-<!--                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"-->
-<!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
-<!--                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>-->
-<!--                    <line x1="8" y1="21" x2="16" y2="21"/>-->
-<!--                    <line x1="12" y1="17" x2="12" y2="21"/>-->
-<!--                </svg>-->
-<!--                Products-->
-<!--            </a>-->
+            <!--            <a class="nav-link" href="#">-->
+            <!--                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"-->
+            <!--                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+            <!--                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>-->
+            <!--                    <line x1="8" y1="21" x2="16" y2="21"/>-->
+            <!--                    <line x1="12" y1="17" x2="12" y2="21"/>-->
+            <!--                </svg>-->
+            <!--                Products-->
+            <!--            </a>-->
         </div>
 
         <div class="navbar-actions">
@@ -135,43 +155,12 @@
     </div>
 </nav>
 
-<!-- ========== HERO SECTION ========== -->
 <section class="hero-section">
     <div class="hero-content">
-        <h1 class="hero-title">Discover Amazing <span class="gradient-text">Products</span></h1>
-        <p class="hero-subtitle">Shop the latest trends with unbeatable prices and premium quality</p>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Products</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">50k+</span>
-                <span class="stat-label">Customers</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">4.9</span>
-                <span class="stat-label">Rating</span>
-            </div>
+        <div class="ui items" id="items">
         </div>
     </div>
 </section>
-
-<!-- ========== PRODUCTS SECTION ========== -->
-<section class="products-section">
-    <div class="ui container">
-        <div class="section-header">
-            <h2 class="section-title">Featured Products</h2>
-            <p class="section-subtitle">Hand-picked just for you</p>
-        </div>
-        <div class="row">
-            <div class="ui special cards four column grid" id="cards-holder">
-                <!-- Products will be injected here -->
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ========== FOOTER ========== -->
 <footer class="site-footer">
     <div class="ui container">
@@ -193,7 +182,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
-<script type="module" src="scripts/index.js"></script>
+<script type="module" src="scripts/checkout.js"></script>
 <script type="module" src="scripts/useBasket.js"></script>
 </body>
 </html>
