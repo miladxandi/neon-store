@@ -50,6 +50,8 @@ git commit -m "custom message"
 
 git remote add origin https://github.com/miladxandi/neon-store.git
 
+git pull origin main
+
 git push origin main
 ```
 
