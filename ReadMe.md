@@ -39,7 +39,19 @@ Version Control (VCS)
 
 Command-Line application
 
-git init (initialize)
+Providers: Github, Gitlab, BitBucket, Azure DevOps , etc
+
+```shell
+git init
+
+git add .
+
+git commit -m "custom message"
+
+git remote add origin https://github.com/miladxandi/neon-store.git
+
+git push origin main
+```
 
 ---
 
